@@ -1,9 +1,15 @@
 Instala o Laravel Installer globalmente
-pelo seu cdm, Navega para a pasta do projeto
+pelo seu cdm de administrador, Navega para a pasta do projeto
  1 cd c: sua/pasta
  2 laravel new financial_app
  3 cd financial_app
  4 php artisan make:migration create_transactions_table --create=transactions
 copie o código do database.php no seu database/migrations/(data que o -create=transactions foi feito)
+volte para o cdm admin
+ 1 php artisan migrate
+ 2 php artisan make:model User -s
+procure no seu financial_app,database/seeders/UsersTableSeeder.php e copie o código do database/seeders.php aqui
+
+
 
 
