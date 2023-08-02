@@ -1,0 +1,8 @@
+Instala o Laravel Installer globalmente
+pelo seu cdm, Navega para a pasta do projeto
+ 1 cd c: sua/pasta
+ 2 laravel new financial_app
+ 3 cd financial_app
+ 4 php artisan make:migration create_transactions_table --create=transactions
+
+
