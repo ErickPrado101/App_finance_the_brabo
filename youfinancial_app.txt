@@ -10,6 +10,10 @@ volte para o cdm admin
  2 php artisan make:model User -s
 procure no seu financial_app,database/seeders/UsersTableSeeder.php e copie o código do database/seeders.php aqui
 copie o DatabaseSeeder.php e cole complementando o código dodatabase/seeders/DatabaseSeeder.php
+retorne para o cdm admin
+ 1 php artisan db:seed
+ 2 php artisan make:controller TransactionController
+Edite o arquivo gerado em app/Http/Controllers/TransactionController.php e implemente as funções para exibir e registrar transações do TransactionController.php
 
 
 
