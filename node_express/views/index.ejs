@@ -1,37 +1,28 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>App Financeiro</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Transações Financeiras</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="/">App Financeiro</a>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Visualizar Transações</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/python-analysis">Análise Financeira</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuário</a>
-                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                        <li><a class="dropdown-item" href="/change-user/1">John Doe</a></li>
-                        <li><a class="dropdown-item" href="/change-user/2">Jane Smith</a></li>
-                        <li><a class="dropdown-item" href="/change-user/3">Bob Johnson</a></li>
-                        <li><a class="dropdown-item" href="/change-user/4">Alice Brown</a></li>
-                        <li><a class="dropdown-item" href="/change-user/5">Michael White</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <h1>Transações Financeiras</h1>
 
-    <div class="container mt-4">
-        <% include transactions/index %>
-    </div>
+    <form action="/transactions" method="post">
+        <label for="description">Descrição:</label>
+        <input type="text" name="description" required>
+
+        <label for="amount">Valor:</label>
+        <input type="number" name="amount" step="0.01" required>
+
+        <button type="submit">Registrar Transação</button>
+    </form>
+
+    <h2>Histórico de Transações</h2>
+    <ul>
+        <% transactions.forEach(transaction => { %>
+            <li><%= transaction.description %> - R$ <%= transaction.amount.toFixed(2) %></li>
+        <% }) %>
+    </ul>
 </body>
 </html>
+
