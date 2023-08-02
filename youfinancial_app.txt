@@ -9,6 +9,7 @@ volte para o cdm admin
  1 php artisan migrate
  2 php artisan make:model User -s
 procure no seu financial_app,database/seeders/UsersTableSeeder.php e copie o código do database/seeders.php aqui
+Adicione o chamado do seeder em DatabaseSeeder.php
 
 
 
